@@ -11,9 +11,8 @@ def generate_survey():
     try:
         data = request.json
         form_type = data.get('form_type')
-        query = data.get('query')
 
-        if not form_type or not query:
+        if not form_type:
             return jsonify({'error': 'Invalid input. Please provide both number_of_questions and query parameters.'})
 
         filler = FormFiller(form_type)
