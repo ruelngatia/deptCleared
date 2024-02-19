@@ -3,7 +3,7 @@ import openai
 
 class FormFiller:
     def __init__(self, form):
-        self.client = openai.OpenAI(api_key = "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")
+        self.client = openai.OpenAI(api_key = "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")
         self.form = form
     def fill_form(self):
         text_gen = self.client.chat.completions.create(
