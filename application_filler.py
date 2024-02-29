@@ -3,7 +3,7 @@ import openai
 
 class FormFiller:
     def __init__(self, form):
-        self.client = openai.OpenAI(api_key = "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")
+        self.client = openai.OpenAI(api_key = "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")
         self.form = form
     def fill_form(self):
         text_gen = self.client.chat.completions.create(
@@ -15,12 +15,12 @@ class FormFiller:
                 },
                 {
                     "role": "system",
-                    "content": f"Generate the structure of the {self.form} form"                
+                    "content": f"Generate the structure of the {self.form} form in the UK"                
                 },
                 {
                     "role": "system",
                     "content": "Answer the questions in the structure generated with basic answers that will help the user make the application. \
-                                Guide the user fully."                
+                                Guide the user fully and be as detailed as possible no brief overview just one complete response."                
                 }
             ]
         )

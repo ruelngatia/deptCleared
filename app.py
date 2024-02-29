@@ -11,31 +11,45 @@ Swagger(app)
 @app.route('/fill-application', methods=['POST'])
 def fill_application():
     """
-    An endpoint to get form filling help.
+    Fill out a form based on the user's input.
     ---
+    tags:
+      - Form Filling
     parameters:
-      - name: body
-        in: body
-        required: true
+      - name: form_type
+        in: query
         schema:
-          id: application
-          required:
-            - form_type
-          properties:
-            form_type:
-              type: string
-              description: The type of form to be filled
-              default: "Job Application"
+          type: string
+        required: false
+        description: The type of the form to fill out. It must be one of the supported form types by the FormFiller class.
+        default: Form N349 (Application for a Third Party Debt Order)
     responses:
       200:
-        description: The result is
+        description: The filled form as a JSON object.
+        schema:
+          type: object
+          properties:
+            filled_form:
+              type: string
+      400:
+        description: The error message if the form type is not specified or not supported.
+        schema:
+          type: object
+          properties:
+            error:
+              type: string
+      500:
+        description: The error message if there is any error in filling the form.
+        schema:
+          type: object
+          properties:
+            error:
+              type: string
     """
     try:
-        data = request.json
-        form_type = data.get('form_type')
-
+        form_type = request.args.get('form_type')
         if not form_type:
-            return jsonify({'error': 'Invalid input. Please provide form_type parameter.'})
+            return jsonify({'error': 'No form type specified'}), 400
 
         filler = FormFiller(form_type)
         response = filler.fill_form()
@@ -48,24 +62,44 @@ def fill_application():
 @app.route('/chatbot', methods=['POST'])
 def chatbot_endpoint():
     """
-    Chatbot endpoint
+    Get a chatbot response based on the user's query.
     ---
+    tags:
+      - Chatbot
     parameters:
       - name: body
         in: body
-        required: true
         schema:
           id: chatbot
           required:
-            - query
+            - Who is a debtor when filling in the forms?
           properties:
             query:
               type: string
-              description: The query for the chatbot
-              default: "Hello, chatbot!"
+              description: The query for the chatbot. It can be any question related to the form filling process.
+              default: "Who is a debtor when filling in the forms?"
     responses:
       200:
-        description: The result is
+        description: The chatbot response as a JSON object.
+        schema:
+          type: object
+          properties:
+            response:
+              type: string
+      400:
+        description: The error message if the query parameter is missing.
+        schema:
+          type: object
+          properties:
+            error:
+              type: string
+      500:
+        description: The error message if there is any error in getting the chatbot response.
+        schema:
+          type: object
+          properties:
+            error:
+              type: string
     """
     data = request.get_json()
 
@@ -93,4 +127,4 @@ def home():
     return "Hello, World!"
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=3012)
+    app.run(debug = True, host='0.0.0.0', port=3012)

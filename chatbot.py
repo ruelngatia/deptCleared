@@ -2,7 +2,7 @@ import openai
 
 class Chatbot:
     def __init__(self, query):
-        self.client = openai.OpenAI(api_key="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")
+        self.client = openai.OpenAI(api_key="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")
         self.query = query
 
     def main(self):
