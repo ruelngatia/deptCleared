@@ -1,9 +1,12 @@
 import openai
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 class FormFiller:
     def __init__(self, form):
-        self.client = openai.OpenAI(api_key = "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")
+        self.openai_api_key = os.getenv('OPENAI_API')
+        self.client = openai.OpenAI(api_key = self.openai_api_key)
         self.form = form
     def fill_form(self):
         text_gen = self.client.chat.completions.create(
@@ -30,7 +33,3 @@ class FormFiller:
         content = message.content    
         return content
 
-# form = "Form N349 (Application for a Third Party Debt Order)"
-# filler = FormFiller(form)
-# response = filler.fill_form()
-# print(response)
