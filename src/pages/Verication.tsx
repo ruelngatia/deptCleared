@@ -17,7 +17,7 @@ export default function Verication() {
       .verifyOTP(username, OTP)
       .then((res) => {
         window.localStorage.setItem('auth',JSON.stringify(res))
-        navigator("/reports");
+        navigator("/fill-application");
         toast.success("Login successful");
       })
       .catch((error: AxiosError) => {
