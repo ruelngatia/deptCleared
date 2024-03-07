@@ -25,5 +25,5 @@ export const TypingEffect: React.FC<Typing> = ({
     return () => clearInterval(interval);
   }, [text, speed]);
 
-  return <span className="whitespace-pre-wrap pt-4">{displayText}</span>;
+  return <span className="whitespace-pre-wrap pt-4 ">{displayText}</span>;
 };

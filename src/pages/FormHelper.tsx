@@ -68,7 +68,9 @@ export default function FormHelper() {
         />
       </div>
       <div className="mx-10 mt-4">
-        {isLoading ? <div className="flex justify-center"><CircularProgress/></div>: <TypingEffect text={explanation} speed={30} />}
+        {isLoading ? <div className="flex justify-center"><CircularProgress/></div>: <div className="border p-4 rounded bg-slate-300">
+          <TypingEffect text={explanation} speed={30} />
+        </div> }
       </div>
     </div>
   );

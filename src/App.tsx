@@ -20,6 +20,7 @@ import Fab from "@mui/material/Fab";
 import MessageIcon from '@mui/icons-material/Message';
 import { useState } from "react";
 import Chatbot from "./componets/Chatbot";
+import CloseIcon from '@mui/icons-material/Close';
 
 function App() {
 
@@ -51,8 +52,8 @@ function App() {
         {isChatBoxOpen?<Chatbot/> : ''}
                  
         <Fab variant="extended" color="primary" onClick={() => setIsChatBoxOpen(!isChatBoxOpen)}>
-          <MessageIcon sx={{ mr: 1 }} />
-          Need Help?
+          {!isChatBoxOpen ? <MessageIcon sx={{ mr: 1 }} /> : <CloseIcon/>}
+          {isChatBoxOpen? 'Close' : "Need Help?"}
         </Fab>
       </div>
       <Footer/>
