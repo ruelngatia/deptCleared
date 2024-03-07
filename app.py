@@ -8,12 +8,6 @@ app = Flask(__name__)
 CORS(app)
 Swagger(app)
 
-from flask import Flask, request, jsonify
-from flasgger import Swagger, swag_from
-
-app = Flask(__name__)
-Swagger(app)
-
 @app.route('/fill-application', methods=['POST'])
 @swag_from({
     'tags': ['Form Filling'],
