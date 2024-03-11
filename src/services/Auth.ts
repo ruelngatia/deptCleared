@@ -4,7 +4,7 @@ import { LoginModel } from "../models/LoginModel";
 
 export class Auth {
   // public baseURL: string = "http://localhost:4004";
-  public baseURL: string = "https://deptclearedserver.onrender.com";
+  public baseURL: string = "https://deptclearedserver-5a1c.onrender.com";
 
   public async signin(form: any): Promise<any> {
     try {
