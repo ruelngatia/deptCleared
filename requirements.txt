@@ -1,0 +1,7 @@
+flask==2.3.3
+openai==1.7.2
+flask_cors==4.0.0
+gunicorn==21.2.0
+langchain==0.0.306
+flasgger
+python-dotenv
