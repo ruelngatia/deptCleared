@@ -25,8 +25,8 @@ export default function Chatbot() {
     {
       text: "Hello how can I help you today?",
       user: {
-        id: "Bot",
-        name: "Bot",
+        id: "AI Helper",
+        name: "AI Helper",
       },
     },
   ]);
@@ -50,8 +50,8 @@ export default function Chatbot() {
         let m = {
           text: res.response,
           user: {
-            id: "Bot",
-            name: "Bot",
+            id: "AI Helper",
+            name: "AI Helper",
           },
         };
         setMessages(prevMessages => [...prevMessages, m]);

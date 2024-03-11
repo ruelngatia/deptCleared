@@ -99,8 +99,8 @@ export default function Signin() {
                 <p className="text-base text-body-secondary">
                   Not a member yet?
                   <a
-                    href="signup.html"
-                    className="text-primary hover:underline"
+                    onClick={()=> navigate('/signup')}
+                    className="cursor-pointer text-primary hover:underline"
                   >
                     Sign Up
                   </a>

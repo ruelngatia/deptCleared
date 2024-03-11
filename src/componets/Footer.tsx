@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import faintGrid from "../assets/svg/faint-grid.svg";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Footer() {
   const navigator = useNavigate();
+  const location = useLocation();
+  const [scrollTo,setScrollTo] = useState<string>('');
+
+  const handleClickScroll = (id: string) => {
+    if(location.pathname != '/'){
+      navigator('/')
+    }
+    setScrollTo(id)
+  };
+
+  useEffect(()=>{
+    const element = document.getElementById(scrollTo);
+    console.log(element);
+    
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  },[location,scrollTo])
 
   return (
     <footer
@@ -31,7 +49,7 @@ export default function Footer() {
                 dynamic and user-focused solutions for debt relief. Our
                 commitment to innovation, accuracy, and user empowerment is
                 unwavering, as we strive to simplify and enhance the debt
-                management experience for our clients{" "}
+                management experience for our clients.{" "}
               </p>
               <div className="-mx-3 flex items-center">
                 <a
@@ -107,7 +125,7 @@ export default function Footer() {
               <ul>
                 <li>
                   <a
-                    onClick={() => navigator("/")}
+                    onClick={() => handleClickScroll('home')}
                     className="cursor-pointer mb-3 inline-block text-base text-gray-7 hover:text-primary"
                   >
                     Home
@@ -115,7 +133,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    onClick={() => navigator("/")}
+                    onClick={() => handleClickScroll("features")}
                     className="cursor-pointer mb-3 inline-block text-base text-gray-7 hover:text-primary"
                   >
                     Features
@@ -123,7 +141,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    onClick={() => navigator("/")}
+                    onClick={() => handleClickScroll("about")}
                     className="cursor-pointer mb-3 inline-block text-base text-gray-7 hover:text-primary"
                   >
                     About
@@ -131,10 +149,10 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    onClick={() => navigator("/")}
+                    onClick={() => handleClickScroll("team")}
                     className="cursor-pointer mb-3 inline-block text-base text-gray-7 hover:text-primary"
                   >
-                    Testimonial
+                    Team
                   </a>
                 </li>
               </ul>
@@ -152,14 +170,6 @@ export default function Footer() {
                     className="mb-3 inline-block text-base text-gray-7 hover:text-primary"
                   >
                     How it works
-                  </a>
-                </li>
-                <li>
-                  <a
-                    onClick={() => navigator("/privacy")}
-                    className="cursor-pointer mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                  >
-                    Privacy policy
                   </a>
                 </li>
                 <li>
@@ -245,7 +255,7 @@ export default function Footer() {
       <div className="mt-12 border-t border-[#8890A4] border-opacity-40 py-8 lg:mt-[60px]">
         <div className="container">
           <div className="-mx-4 flex justify-center items-center text-white">
-            <div className="w-full px-4 md:w-2/3 lg:w-1/2">
+            <div className="w-full px-4 md:w-2/3 lg:w-1/2 text-center">
               <p>&copy; All rights reserved 2024s</p>
             </div>
           </div>

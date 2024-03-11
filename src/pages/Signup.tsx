@@ -133,8 +133,9 @@ export default function Signup() {
                     href="javascript:void(0)"
                     className="text-primary hover:underline"
                   >
-                    Privacy
+                    Privacy 
                   </a>
+                  <span>  </span>
                   <a
                     href="javascript:void(0)"
                     className="text-primary hover:underline"
