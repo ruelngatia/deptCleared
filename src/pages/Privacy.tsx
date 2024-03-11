@@ -11,7 +11,7 @@ export default function Privacy() {
             Linking to our website
           </h2>
           <p>
-            Deptscleared  ("we", “us”) is committed to protecting and
+            Debtscleared  ("we", “us”) is committed to protecting and
             respecting your privacy. This notice is made available to you on our
             homepage and on every other page of{" "}
             <a
@@ -26,7 +26,7 @@ export default function Privacy() {
             our site, will be processed by us. Please read the following
             carefully to understand our views and practices regarding your
             personal data and how we will treat it. For the purpose of
-            applicable data protection law, the data controller is Deptscleared 
+            applicable data protection law, the data controller is Debtscleared 
              Ltd of 4 Durham Workspace, Abbey Road, Pity Me, Durham DH1
             5JZ.
           </p>

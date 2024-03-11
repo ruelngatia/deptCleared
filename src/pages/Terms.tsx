@@ -10,7 +10,7 @@ export default function Terms() {
           <h2 className="text-2xl font-semibold mb-4">Terms of Website Use</h2>
           <p>
             These terms of use (together with the documents referred to in it)
-            tell you the terms of use on which you may make use of the Deptscleared 
+            tell you the terms of use on which you may make use of the Debtscleared 
              website{" "}
             <a
               className="hover:underline text-primary"
@@ -55,7 +55,7 @@ export default function Terms() {
               </li>
             </ul>
              If you purchase or subscribe
-            to products or services from Deptscleared , separate terms
+            to products or services from Debtscleared , separate terms
             and conditions will apply to those products or services.
             
           </div>
@@ -70,7 +70,7 @@ export default function Terms() {
             >
               debtscleared.co.uk
             </a>
-            is a Website operated by Deptscleared Limited ("we"). We are
+            is a Website operated by Debtscleared Limited ("we"). We are
             registered in England and Wales under company number 15398624 and
             have our registered office at 4 Durham Workspace, Abbey Road, Pity
             Me, Durham DH1 5JZ.
@@ -309,8 +309,8 @@ export default function Terms() {
             comply in all respects with the content standards set out in our
             Acceptable Use Notice. If you wish to make any use of the content on
             our Website other than that set out above,
-            <a href="http://support@deptscleared.co.uk">
-             support@deptscleared.co.uk.
+            <a href="http://support@debtscleared.co.uk">
+             support@debtscleared.co.uk.
             </a>
           </p>
         </section>

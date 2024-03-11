@@ -25,7 +25,7 @@ export default function UseNotice() {
           >
             debtscleared.co.uk
           </a>{" "}
-          is a site operated by Deptscleared Limited (we or us). We are
+          is a site operated by Debtscleared Limited (we or us). We are
           registered in England and Wales under company number 15398624 and we
           have our registered office at 4 Durham Workspace, Abbey Road, Pity Me,
           Durham DH1 5JZ.

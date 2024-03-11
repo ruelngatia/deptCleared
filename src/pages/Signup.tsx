@@ -16,7 +16,7 @@ export default function Signup() {
   const [form, setForm] = useState<signupModel>({
     email: "",
     password: "",
-    project: "deptcleared",
+    project: "debtcleared",
     site: location.pathname,
     username: ""
   });

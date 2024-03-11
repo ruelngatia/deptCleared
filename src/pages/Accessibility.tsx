@@ -11,7 +11,7 @@ export default function Accessibility() {
             Linking to our website
           </h2>
           <p>
-          Deptscleared  is endeavouring to meet all AA accessibility
+          Debtscleared  is endeavouring to meet all AA accessibility
             checkpoints as defined by the{" "}
             <b> World Wide Web Consortium's (W3C)</b> guidelines and the
             <b> W3C Web Accessibility Initiative</b> (WAI).
@@ -35,9 +35,9 @@ export default function Accessibility() {
             Please send any comments to{" "}
             <a
               className="hover:underline text-primary"
-              href="support@deptscleared.co.uk"
+              href="support@debtscleared.co.uk"
             >
-              support@deptscleared.co.uk
+              support@debtscleared.co.uk
             </a>
             . It would be helpful to include the web address of any pages where
             you have experienced difficulties. The web page can be found in the
