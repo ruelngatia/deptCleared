@@ -1,10 +1,14 @@
 import React from "react";
 import { BannerInterface } from "../models/BannerInterface";
+import { useNavigate } from "react-router-dom";
 
 export const Banner: React.FC<BannerInterface> = ({
   title,
   currentPage,
 }): JSX.Element => {
+
+  const navigator = useNavigate()
+
   return (
     <div className="relative z-10 overflow-hidden pt-[120px] pb-[60px] md:pt-[130px] lg:pt-[140px] dark:bg-dark">
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-stroke/0 via-stroke dark:via-dark-3 to-stroke/0"></div>
@@ -18,8 +22,8 @@ export const Banner: React.FC<BannerInterface> = ({
               <ul className="flex items-center justify-center gap-[10px]">
                 <li>
                   <a
-                    href="index.html"
-                    className="flex items-center gap-[10px] text-base font-medium text-dark dark:text-white"
+                    onClick={() => navigator('/')}
+                    className="cursor-pointer flex items-center gap-[10px] text-base font-medium text-dark dark:text-white"
                   >
                     Home
                   </a>
