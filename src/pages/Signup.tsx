@@ -18,8 +18,7 @@ export default function Signup() {
     password: "",
     project: "deptcleared",
     site: location.pathname,
-    username: "",
-    company: ''
+    username: ""
   });
 
   const signup = () => {
