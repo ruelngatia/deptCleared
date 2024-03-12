@@ -211,14 +211,7 @@ export default function Footer() {
                     Use notice
                   </a>
                 </li>
-                <li>
-                  <a
-                    onClick={() => navigator("/terms")}
-                    className="cursor-pointer mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                  >
-                    Terms of service
-                  </a>
-                </li>
+              
               </ul>
             </div>
           </div>
