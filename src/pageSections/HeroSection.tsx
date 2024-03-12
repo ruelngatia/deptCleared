@@ -11,7 +11,7 @@ export default function HeroSection() {
     className="relative overflow-hidden bg-primary pt-[120px] md:pt-[130px] lg:pt-[160px]"
   >
     <div className="container">
-      <div>
+      <div className="h-[22vh]">
         <video autoPlay muted loop className="w-full h-full object-cover absolute top-0 left-0">
           <source src={vd} type="video/mp4"/>
           Your browser does not support the video tag.
