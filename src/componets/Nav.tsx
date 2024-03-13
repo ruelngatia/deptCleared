@@ -32,6 +32,24 @@ useEffect(() => {
   };
   }, []);
 
+  const [scrollTo,setScrollTo] = useState<string>('');
+
+  const handleClickScrolling = (id: string) => {
+    if(location.pathname != '/'){
+      navigator('/')
+    }
+    setScrollTo(id)
+  };
+
+  useEffect(()=>{
+    const element = document.getElementById(scrollTo);
+    console.log(element);
+    
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  },[location,scrollTo])
+
   return (
     <div
     className={`absolute ud-header left-0 top-0 z-40 flex w-full items-center bg-transparent ${isScolled  ? 'sticky' : ''}` }>
@@ -83,7 +101,7 @@ useEffect(() => {
                 <li className="group relative">
                   <a
                     
-                    onClick={() => handleClickScroll('about')}
+                    onClick={() => handleClickScrolling('about')}
                     className={`cursor-pointer ud-menu-scroll mx-8 flex py-2 text-base font-medium group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:group-hover:opacity-70 xl:ml-10 ${location.pathname !== '/'? 'text-body-color ':'lg:text-white lg:group-hover:text-white'}`}
                   >
                     About
@@ -92,7 +110,7 @@ useEffect(() => {
                 <li className="group relative">
                   <a
                     
-                    onClick={() => handleClickScroll('pricing')}
+                    onClick={() => handleClickScrolling('pricing')}
                     className={`cursor-pointer ud-menu-scroll mx-8 flex py-2 text-base font-medium group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:group-hover:opacity-70 xl:ml-10 ${location.pathname !== '/'? 'text-body-color ':'lg:text-white lg:group-hover:text-white'}`}
                   >
                     Pricing
@@ -101,7 +119,7 @@ useEffect(() => {
                 <li className="group relative">
                   <a
                     
-                    onClick={() => handleClickScroll('team')}
+                    onClick={() => handleClickScrolling('team')}
                     className={`cursor-pointer ud-menu-scroll mx-8 flex py-2 text-base font-medium group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:group-hover:opacity-70 xl:ml-10 ${location.pathname !== '/'? 'text-body-color ':'lg:text-white lg:group-hover:text-white'}`}
                   >
                     Team
@@ -110,7 +128,7 @@ useEffect(() => {
                 <li className="group relative">
                   <a
                     
-                    onClick={() => handleClickScroll('contact')}
+                    onClick={() => handleClickScrolling('contact')}
                     className={`cursor-pointer ud-menu-scroll mx-8 flex py-2 text-base font-medium group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:group-hover:opacity-70 xl:ml-10 ${location.pathname !== '/'? 'text-body-color ':'lg:text-white lg:group-hover:text-white'}`}
                   >
                     Contact
