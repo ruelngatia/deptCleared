@@ -30,6 +30,9 @@ export default function FormHelper() {
   return (
     <div className="mb-20">
       <Banner title="Fill application" currentPage="fill-application" />
+          <p className="py-4 mx-10">
+            Select the form that would like help to fill:
+          </p>
       <div className="flex flex-row gap-6 mx-10">
         <div className="w-2/3 ">
            <FormControl className="w-full">
@@ -68,7 +71,8 @@ export default function FormHelper() {
         />
       </div>
       <div className="mx-10 mt-4">
-        {isLoading ? <div className="flex justify-center"><CircularProgress/></div>: <div className="border p-4 rounded bg-slate-300">
+        {isLoading ? <div className="flex justify-center"><CircularProgress/></div>: 
+        <div className="border border-gray-400 min-h-96 p-4 rounded bg-gray-300">
           <TypingEffect text={explanation} speed={30} />
         </div> }
       </div>
